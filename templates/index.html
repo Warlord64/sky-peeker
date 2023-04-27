@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <head>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="../static/style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather-App</title>
 </head>
-<body>
-    <!--
+<body class="home">
+
+
+    <div id="image" style="background:url(/static/images/image_of_something.jpg) center / cover no-repeat;"></div>
+
+
+
     <header class="primary-header flex">
         <div>
-            <img src="asset/img/logo2.png" alt="" class="logo">
+            <img src="../static/asset/logo2.png" alt="" class="logo">
         </div>
         
         <hr class="hr-line-one">
@@ -37,8 +42,8 @@
         </nav>
         
     </header>
-    <script src="main.js"></script>-->
-    
+    <script src="../static/main.js"></script>
+
     <form method="post">
         <div class="input-group">
             <input type="text" class="form-control" name="city" placeholder="Search">
@@ -55,7 +60,7 @@
                         <p>country code : {{weather_info.country_code}}</p>
                     </div>
                     {% endif %}
-                </div>
+                </div>    
 </body>
 
 </html>
