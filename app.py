@@ -7,19 +7,22 @@ app = Flask(__name__)
 def tocelcius(temperature_in_kelvin):
     return str(round(temperature_in_kelvin - 273.15, 3))
 
-@app.route('/',methods=['POST'])
+@app.route('/',methods=['POST', 'GET'])
 def weather():
     #api key
     api_key = open('api_key', 'r').read()
 
     #city
-    city = request.form['city']
+    if request.method == 'POST':
+        city = request.form['city']
+    else:
+        city = 'kanpur'
 
     #base url for openweather api
-    base_url = 'http://api.openweathermap.org/data/2.5/weather?q='
+    # base_url = 'http://api.openweathermap.org/data/2.5/weather?q='
 
     #getting json data from the api
-    url = urllib.request.urlopen(base_url + city + '&appid='+api_key).read()
+    url = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + api_key).read()
 
     # converting json data to dictionary
     data = json.loads(url)
