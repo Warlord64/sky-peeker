@@ -18,9 +18,6 @@ def weather():
     else:
         city = 'kanpur'
 
-    #base url for openweather api
-    # base_url = 'http://api.openweathermap.org/data/2.5/weather?q='
-
     #getting json data from the api
     url = urllib.request.urlopen('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + api_key).read()
 
