@@ -1,11 +1,11 @@
 body{
     text-transform: capitalize;
-    background-image: url(./asset/nasa-Q1p7bh3SHj8-unsplash.jpg);
+    background-image: url(../static/asset/bgimg.jpg);
     background-size: cover;
     height: 50rem;
     background-repeat: no-repeat;
- /*   overflow-x: hidden;
-    overflow: hidden;*/
+ /*   overflow-x: hidden;*/
+    overflow: hidden;
 }
 
 
@@ -43,13 +43,14 @@ body{
     left: 5rem;
     align-items: center;
     width: 25em;
-    z-index: 2000;
+
 }
 
 .flex{
     display: flex;
     gap: var(--gap, 1rem);
 }
+.primary-navigation a:hover{color:orange;}
 
 .primary-navigation a{
     text-decoration: none;
@@ -60,6 +61,55 @@ body{
 .primary-navigation a > [aria-hidden="true"] {
     font-weight: 800;
     margin-inline-end: 0.75em;
+}
+
+
+
+.skypeeker .content{
+    position: absolute;
+    top: 50%;
+    color: white;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(1rem);
+    width: 500px;
+    height: 300px;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.input-group input{
+    border:3px solid hsl(0 0% 100% / 0.1);
+    box-shadow: 0 2px 20px 0 black;
+    border-radius: 20px;
+    height: 5vh;
+    color: white;
+    text-align: center;
+    padding-left: 10px;
+    background:rgba(173, 216, 230, 0.582);
+    backdrop-filter: blur(1rem);
+    width: 25vw;
+    transition:350ms ease-out;
+}
+
+.input-group input::placeholder{
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.skypeeker .content h1{color: orange;}
+
+
+
+.span{color: orange;}
+
+.row div{
+    align-content: flex-start;
 }
 
 @media (max-width:35em) {
@@ -131,6 +181,18 @@ body{
     .hr-line-one{
         display: none;
     }
+
+    .skypeeker .content{
+        width: 350px;
+        height: 350px;
+    }
+
+    .input-group input{
+        height: 4.5vh;
+        width: 40vw;
+    }
+
+
 }
 
 @media(min-width: 35em) and (max-width:55em){

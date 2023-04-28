@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" 
+    type="image/png" 
+    href="../static/asset/logo2.png">
     <title>Weather-App</title>
 </head>
 <body class="home">
@@ -30,13 +33,13 @@
             <ul id="primary-navigation" data-visible="false"
             class="primary-navigation flex">
             <li class="active">
-                <a href="">
+                <a href="/">
                     <span aria-hidden="true">00</span>Home
                 </a>
             
             <li>
-                <a href="">
-                    <span aria-hidden="true">03</span>About
+                <a href="https://github.com/suryapsp/sky-peeker" target="_blank">
+                    <span aria-hidden="true">01</span>Github
                 </a>
             </ul>
         </nav>
@@ -44,23 +47,39 @@
     </header>
     <script src="../static/main.js"></script>
 
-    <form method="post">
-        <div class="input-group">
-            <input type="text" class="form-control" name="city" placeholder="Search">
-            <form>
+    <div class="skypeeker">
 
-                <div class="row">
-                    {% if weather_info.country_code and weather_info.coordinate and weather_info.temp and
-                    weather_info.pressure and weather_info.humidity %}
-                    <div>
-                        
-                        <p>City name : {{weather_info.cityname}}</p>
-                        <p>temp : {{weather_info.temp_cel}}</p>
-                        <p>humidity : {{weather_info.humidity}}</p>
-                        <p>country code : {{weather_info.country_code}}</p>
+        <div class="content">
+            <h1>Sky Peeker</h1>
+            <form method="post">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="city" placeholder="Search">
+                    <form>
+        
+                        <div class="row">
+                            {% if weather_info.country_code and weather_info.coordinate and weather_info.temp and
+                            weather_info.pressure and weather_info.humidity %}
+
+                            <div >
+     
+                                <p>City name : <span class="span">{{weather_info.cityname}}</span></p>
+                                <p>temperature :<span class="span"> {{weather_info.temp_cel}}</span></p>
+                                <p>humidity :<span class="span"> {{weather_info.humidity}}</span></p>
+                                <p>country code : <span class="span">{{weather_info.country_code}}</span></p>
+  
+                            </div>
+                            {% endif %}
+                        </div>
+                      </form>
                     </div>
-                    {% endif %}
-                </div>    
+                </form>  
+        </div>
+    </div>
+
+
+
+
+
 </body>
 
 </html>
